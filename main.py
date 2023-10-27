@@ -1,4 +1,4 @@
-from turtle import Turtle, Screen
+from turtle import Screen
 from snake import Snake
 from food import Food
 from scoreboard import Score
@@ -28,13 +28,13 @@ while game_is_on:
     screen.update()
 
     # Increase speed with score
-    # if score.score < 3:
-    #     delay = 0.5
-    # elif score.score > 10:
-    #     delay = 0.1
-    # else:
-    #     delay = 1/score.score
-    delay = 0.2
+    if score.score < 3:
+        delay = 0.5
+    elif score.score > 10:
+        delay = 0.1
+    else:
+        delay = 1/score.score
+    # delay = 0.2
 
     time.sleep(delay)
     snake.move()
