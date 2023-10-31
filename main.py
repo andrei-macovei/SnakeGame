@@ -57,8 +57,7 @@ while game_is_on:
         if snake.head.distance(segment) < 10:
             game_is_on = False
             score.game_over()
-            print(f"head at {snake.head.pos()} collided with {segment.pos()}. Heading: {snake.head.heading()}")
-            for seg in snake.segments:
-                print(f"segment at {seg.pos()}")
+            with open("high_score.txt", 'w') as file:
+                file.write(str(score.high_score))
 
 screen.exitonclick()
